@@ -1,0 +1,38 @@
+Task #1
+
+In response to heightened security concerns, the xFusionCorp Industries security team has opted for custom Apache users for their web applications. 
+Each user is tailored specifically for an application, enhancing security measures. 
+our task is to create a custom Apache user according to the outlined specifications:
+
+a. Create a user named rose on App server 1 within the Stratos Datacenter.
+
+- Connection to 'App server 3':
+  ssh tony@stapp01
+  passwd
+
+- Creation of 'rose' user
+sudo useradd rose
+passwd
+  
+b. Assign a unique UID 1678 and designate the home directory as /var/www/kareem.
+
+- Check usider ID before changes (optional)
+id -u rose
+
+- Assignation of a uniduqe UID
+sudo usermod -u 1678 rose
+
+- Change user to rose to check his home directory (optional)
+sudo su - rose
+passwd
+pwd
+
+- Change user back to tony (optional)
+exit
+
+- Designation of the home directory as /var/www/rose
+cd /var/www
+sudo mkdir rose
+cd
+sudo usermod -d /var/www/rose rose
+
